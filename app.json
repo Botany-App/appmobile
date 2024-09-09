@@ -1,0 +1,36 @@
+{
+  "expo": {
+    "name": "botany",
+    "slug": "botany",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/images/logo_fundo_verde.png",
+    "scheme": "botany",
+    "userInterfaceStyle": "automatic",
+    "splash": {
+      "image": "./assets/images/logo_sem_fundo.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#081F02"
+    },
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/images/logo_fundo_verde.png",
+        "backgroundColor": "#FEFFFB"
+      }
+    },
+    "web": {
+      "bundler": "metro",
+      "output": "static",
+      "favicon": "./assets/images/logo_fundo_verde.png"
+    },
+    "plugins": [
+      "expo-router"
+    ],
+    "experiments": {
+      "typedRoutes": true
+    }
+  }
+}
