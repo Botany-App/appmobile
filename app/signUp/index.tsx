@@ -1,13 +1,13 @@
 import { View, Text, Alert, TouchableOpacity } from "react-native";
-import AntDesign from "@expo/vector-icons/AntDesign";
 import { router } from "expo-router";
-import TextField from "@/components/TextField";
-import Button from "@/components/Button";
 import { z } from "zod";
-import React, { useState } from "react";
+import { useState } from "react";
 import Checkbox from "expo-checkbox";
-import HandlePostUser from "@/use-cases/handler_post_user";
+import Button from "@/components/Button";
+import TextField from "@/components/TextField";
 import Title from "@/components/login_singup/Title";
+import AntDesign from "@expo/vector-icons/AntDesign";
+import HandlePostUser from "@/use-cases/handler_post_user";
 
 export default function SignUp() {
   const back = () => {
@@ -107,7 +107,7 @@ export default function SignUp() {
 
       <Text
         className="text-zinc-400 mt-4 text-center"
-        onPress={() => router.replace("../login")}>
+        onPress={() => router.replace("/login")}>
         Já tem uma conta? <Text className="text-green-500">Faça login</Text>
       </Text>
 

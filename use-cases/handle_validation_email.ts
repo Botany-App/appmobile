@@ -15,7 +15,7 @@ export default async function handleValidationEmail(codeValues: {
   }
   return new Promise((resolve) => {
     setTimeout(() => {
-      resolve(false);
+      resolve(true);
     }, 2000);
   });
 }

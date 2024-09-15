@@ -1,10 +1,10 @@
-import { View, Text, Image, TouchableOpacity } from "react-native";
+import { View, Text, Image } from "react-native";
 import { Link, router } from "expo-router";
 import Button from "@/components/Button";
 
 export default function App() {
   const login = () => {
-    router.push("/login");
+    router.push("/(app)/home");
   };
   return (
     <View className={"flex-1 bg-zinc-100"}>

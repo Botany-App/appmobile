@@ -8,6 +8,7 @@ import { router } from "expo-router";
 import { z } from "zod";
 import handleLogin from "@/use-cases/handle_login";
 import Button from "@/components/Button";
+
 export default function Login() {
   const back = () => {
     router.back();
@@ -36,7 +37,7 @@ export default function Login() {
         return;
       }
 
-      router.push("/home");
+      router.push("/(app)/home");
     } catch (error) {
       if (error instanceof z.ZodError) {
         const fieldErrors: any = {};
@@ -73,7 +74,7 @@ export default function Login() {
         />
         <Text
           className={"ml-1 mt-2 text-zinc-500"}
-          onPress={() => router.push("/")}>
+          onPress={() => router.replace("/")}>
           Esqueceu a senha? <Text className="text-green-500">Clique aqui</Text>
         </Text>
 
@@ -84,7 +85,9 @@ export default function Login() {
 
       <View className="flex flex-row justify-center mt-4">
         <Text className="text-zinc-400">Não tem uma conta? </Text>
-        <Text className="text-green-500" onPress={() => router.push("/signup")}>
+        <Text
+          className="text-green-500"
+          onPress={() => router.replace("/signUp")}>
           Cadastre-se
         </Text>
       </View>

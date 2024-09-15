@@ -1,10 +1,10 @@
 import { View, Text, TextInput, Alert } from "react-native";
-import AntDesign from "@expo/vector-icons/AntDesign";
 import { router } from "expo-router";
 import { useState } from "react";
 import Button from "@/components/Button";
-import handleValidationEmail from "@/use-cases/handle_validation_email";
 import Title from "@/components/login_singup/Title";
+import handleValidationEmail from "@/use-cases/handle_validation_email";
+
 export default function EmailValidation() {
   const back = () => {
     router.replace("/signUp");
@@ -28,11 +28,11 @@ export default function EmailValidation() {
       const response = await handleValidationEmail(codeValues);
       setLoading(false);
       if (!response) {
-        router.replace("../");
+        router.replace("/");
         Alert.alert("Código de validação inválido");
         return;
       }
-      router.replace("../aplication");
+      router.replace("/(app)");
     } catch (error) {
       setLoading(false);
       Alert.alert("error");
