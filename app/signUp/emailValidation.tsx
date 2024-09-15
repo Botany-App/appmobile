@@ -4,6 +4,7 @@ import { router } from "expo-router";
 import { useState } from "react";
 import Button from "@/components/Button";
 import handleValidationEmail from "@/use-cases/handle_validation_email";
+import Title from "@/components/login_singup/Title";
 export default function EmailValidation() {
   const back = () => {
     router.replace("/signUp");
@@ -37,25 +38,21 @@ export default function EmailValidation() {
       Alert.alert("error");
     }
   };
+
+  const handleCode = () => {
+    Alert.alert("Código reenviado");
+  };
   return (
     <View className={"flex-1 px-6 pt-24 bg-zinc-100"}>
-      <View className={"flex justify-center"}>
-        <AntDesign name="arrowleft" size={32} color="black" onPress={back} />
-      </View>
-      <View className={"flex justify-center"}>
-        <Text className={"text-2xl mt-8 font-bold text-black"}>
-          Insira o código de validação!
-        </Text>
-        <Text className={"text-zinc-400 text-xs mt-2"}>
-          Enviamos um código de validação para o seu e-mail. Insira o código
-          abaixo para validar sua conta.
-        </Text>
-      </View>
+      <Title
+        title="Insira o código de validação!"
+        subtitle="Enviamos um código de validação para o seu e-mail. Insira o código abaixo para validar sua conta."
+        back={back}
+      />
       <View className={"flex flex-row gap-x-5 justify-between mt-16"}>
         <TextInput
           placeholder="0"
           onChangeText={(text) => handleChange("n1", text)}
-          error={errors.n1}
           value={codeValues.n1}
           keyboardType="number-pad"
           maxLength={1}
@@ -66,7 +63,6 @@ export default function EmailValidation() {
         <TextInput
           placeholder="0"
           onChangeText={(text) => handleChange("n2", text)}
-          error={errors.n2}
           value={codeValues.n2}
           keyboardType="number-pad"
           maxLength={1}
@@ -77,7 +73,6 @@ export default function EmailValidation() {
         <TextInput
           placeholder="0"
           onChangeText={(text) => handleChange("n3", text)}
-          error={errors.n3}
           value={codeValues.n3}
           keyboardType="number-pad"
           maxLength={1}
@@ -88,7 +83,6 @@ export default function EmailValidation() {
         <TextInput
           placeholder="0"
           onChangeText={(text) => handleChange("n4", text)}
-          error={errors.n4}
           value={codeValues.n4}
           keyboardType="number-pad"
           maxLength={1}
@@ -98,7 +92,7 @@ export default function EmailValidation() {
         />
       </View>
       <View>
-        <Text className={"text-zinc-400 mt-4"}>
+        <Text className={"text-zinc-400 mt-4"} onPress={handleCode}>
           Não recebeu o código?{" "}
           <Text className={"text-green-500"}>Reenviar código</Text>
         </Text>
@@ -109,13 +103,10 @@ export default function EmailValidation() {
         </Button>
       </View>
       <View>
-        <Text className={"text-zinc-400 mt-4 text-center"}>
-          Já tem uma conta?{" "}
-          <Text
-            className={"text-green-500"}
-            onPress={() => router.replace("./signIn")}>
-            Faça login
-          </Text>
+        <Text
+          className={"text-zinc-400 mt-4 text-center"}
+          onPress={() => router.replace("/login")}>
+          Já tem uma conta? <Text className={"text-green-500"}>Faça login</Text>
         </Text>
       </View>
       <View className={"flex-1 justify-end mb-4"}>

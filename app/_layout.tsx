@@ -1,4 +1,5 @@
 import { Stack } from "expo-router";
+import { Provider } from "react-redux";
 
 export default function Layout() {
   return (
@@ -10,7 +11,7 @@ export default function Layout() {
         name="signUp/emailValidation"
         options={{ headerShown: false }}
       />
-      <Stack.Screen name="aplication/index" options={{ headerShown: false }} />
+      <Stack.Screen name="home/index" options={{ headerShown: false }} />
     </Stack>
   );
 }
